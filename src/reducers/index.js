@@ -37,7 +37,7 @@ export const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 isLoading: false,
-                error: `${state.error} ${action.payload}`
+                error: `${action.payload}`
             }
         default: 
             return state;
