@@ -11,14 +11,14 @@ import "./App.css";
 
 
 class App extends Component {
-  constructor(props){
-    super()
+
+
+  componentDidMount(){
+    this.props.fetchSmurfs()
   }
 
+
   render() {
-
-    fetchSmurfs(this.props.smurfs)
-
     return (
       <div className="App">
         <Header />
