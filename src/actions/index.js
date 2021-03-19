@@ -11,12 +11,14 @@ export const SMURF_FETCH_FAILURE = 'SMURF_FETCH_FAILURE'
 export const SMURF_ADD = 'SMURF_ADD'
 export const SMURF_ERROR = 'SMURF_ERROR'
 
-export const fetchSmurfs = () =>{
+export const fetchSmurfs = (array) =>{
     return(dispatch) =>{
+
+        //trigger loading display
         dispatch({type:SMURF_FETCH_START})
 
 
-
+        //get smurf data from server
         axios.get(`http://localhost:3333/smurfs`)
         .then(res =>{
             console.log(res)
@@ -29,9 +31,9 @@ export const fetchSmurfs = () =>{
 }
 
 export const addSmurf = () =>{
-
+    //add new smurf obj
 }
 
 export const setError = () =>{
-
+    //set value of error message
 }
