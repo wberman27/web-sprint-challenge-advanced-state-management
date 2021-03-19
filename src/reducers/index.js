@@ -17,23 +17,27 @@ export const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 isLoading: false,
+                smurfs: action.payload,
                 error: ''
             }
         case SMURF_FETCH_FAILURE:
             return {
                 ...state,
-                isLoading: false
+                isLoading: false,
+                error: action.payload
             }
         case SMURF_ADD:
             return {
                 ...state,
-                isLoading: false
+                isLoading: false,
+                smurfs: [...state.smurfs, action.payload]
+
             }
         case SMURF_ERROR:
             return {
                 ...state,
                 isLoading: false,
-                error: action.payload
+                error: `${state.error} ${action.payload}`
             }
         default: 
             return state;

@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -10,15 +10,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 
-class App extends Component (props){
-
-  useEffect(() =>{
-    fetchSmurfs(this.props.smurfs)
-  })
+class App extends Component {
 
 
   render() {
-    
+
+    fetchSmurfs(this.props.smurfs)
+
     return (
       <div className="App">
         <Header />

@@ -22,18 +22,26 @@ export const fetchSmurfs = (array) =>{
         axios.get(`http://localhost:3333/smurfs`)
         .then(res =>{
             console.log(res)
+            dispatch({type:SMURF_FETCH_SUCCESS, payload: res})
         })
         .catch(err =>{
             console.log("THIS IS A FETCH DATA ERROR: ", err)
+            dispatch({type:SMURF_FETCH_FAILURE, payload: err.message})
         })
 
     }
 }
 
-export const addSmurf = () =>{
+export const addSmurf = (obj) =>{
     //add new smurf obj
+    return (dispatch) =>{
+        dispatch({type: SMURF_ADD, payload: obj})
+    }
 }
 
-export const setError = () =>{
+export const setError = (string) =>{
     //set value of error message
+    return (dispatch) =>{
+        dispatch({type: SMURF_ERROR, payload: string})
+    }
 }
