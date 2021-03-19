@@ -12,7 +12,7 @@ import "./App.css";
 
 class App extends Component {
 
-
+  //fetchSmurfs invoked on first load
   componentDidMount(){
     this.props.fetchSmurfs()
   }

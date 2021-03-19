@@ -9,10 +9,12 @@ export const initialState = {
 export const reducer = (state = initialState, action)=>{
     switch(action.type){
         case SMURF_FETCH_START:
+            //set loading value to true to show loading on start of fetch
             return {
                 ...state,
                 isLoading: true
             }
+            //on fetch success set smurfs array to payload from endpoint
         case SMURF_FETCH_SUCCESS:
             return {
                 ...state,
@@ -20,6 +22,7 @@ export const reducer = (state = initialState, action)=>{
                 smurfs: action.payload,
                 error: ''
             }
+            //on fetch failure give error message
         case SMURF_FETCH_FAILURE:
             return {
                 ...state,
@@ -27,6 +30,7 @@ export const reducer = (state = initialState, action)=>{
                 error: action.payload
             }
         case SMURF_ADD:
+            //add payload given to addSmurf to smurfs array
             return {
                 ...state,
                 isLoading: false,
@@ -34,6 +38,7 @@ export const reducer = (state = initialState, action)=>{
 
             }
         case SMURF_ERROR:
+            //set error message to payload given to setError
             return {
                 ...state,
                 isLoading: false,

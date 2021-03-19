@@ -24,10 +24,12 @@ export const fetchSmurfs = () =>{
             console.log(res)
             //res.data
             dispatch({type:SMURF_FETCH_SUCCESS, payload: res.data})
+            //provide res.data as payload for smurf fetch success case, to be set as init smurf array
         })
         .catch(err =>{
             console.log("THIS IS A FETCH DATA ERROR: ", err)
             dispatch({type:SMURF_FETCH_FAILURE, payload: err.message})
+            //provide err.message as payload for smurf fetch fail case, to display err.message 
         })
 
     }

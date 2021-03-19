@@ -17,7 +17,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
-
+    //map a smurf component for each form entry in smurfs array
     return(<div className="listContainer">
         {props.smurfs.map(entry =>{
             return <Smurf key = {entry.id} smurf={entry}/>
