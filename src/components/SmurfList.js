@@ -20,7 +20,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 
     return(<div className="listContainer">
         {props.smurfs.map(entry =>{
-            return <Smurf smurf={entry}/>
+            return <Smurf key = {entry.id} smurf={entry}/>
         })
             
         }
